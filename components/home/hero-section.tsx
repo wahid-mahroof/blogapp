@@ -28,34 +28,36 @@ const HeroSection = () => {
               Explore Topics
             </Button>
           </div>
-          <div className="grid grid-cols-3 gap-4 pt-8 text-white md:mx-w-md ">
-            <div className="space-y-2">
-              <div className="text-2xl font-bold text-primary"> 1K+</div>
-              <div className="text-sm text-gray-400">Published articles</div>
+          <div className="flex">
+            <div className="grid grid-cols-3 gap-4 pt-8 text-white md:mx-w-md ">
+              <div className="space-y-2">
+                <div className="text-2xl font-bold text-primary"> 1K+</div>
+                <div className="text-sm text-gray-400">Published articles</div>
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-3 gap-4 pt-8 text-white md:mx-w-md">
-            <div className="space-y-2">
-              <div className="text-2xl font-bold text-primary"> 50+</div>
-              <div className="text-sm text-gray-400">Expert writers</div>
+            <div className="grid grid-cols-3 gap-4 pt-8 text-white md:mx-w-md">
+              <div className="space-y-2">
+                <div className="text-2xl font-bold text-primary"> 50+</div>
+                <div className="text-sm text-gray-400">Expert writers</div>
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-3 gap-4 pt-8 text-white md:mx-w-md">
-            <div className="space-y-2">
-              <div className="text-2xl font-bold text-primary"> 10M</div>
-              <div className="text-sm text-gray-400">Monthly Readers</div>
+            <div className="grid grid-cols-3 gap-4 pt-8 text-white md:mx-w-md">
+              <div className="space-y-2">
+                <div className="text-2xl font-bold text-primary"> 10M</div>
+                <div className="text-sm text-gray-400">Monthly Readers</div>
+              </div>
             </div>
           </div>
           {/* image frame */}
-          <div className=" mt-12 flex-1 md:mt-0">
+          <div className=" mt-12 flex-1 md:mt-0 ml-96">
             <div
               className={cn(
                 "relative mx-auto w-64 h-64 rounded-2xl overflow-hidden",
                 "bg-gradient-to-br from-white/5 to-transparent",
                 "border border-primary/20 backdrop-blur-lg",
-                "shadow-2xl shadow-indigo-500"
+                "shadow-2xl shadow-indigo-500/10"
               )}
             >
               <Image
