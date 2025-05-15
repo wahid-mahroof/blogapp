@@ -51,7 +51,7 @@ const HeroSection = () => {
             </div>
           </div>
           {/* image frame */}
-          <div className=" mt-12 flex-1 md:mt-0 ml-96">
+          <div className=" mt-12 flex-1 md:mt-0 ">
             <div
               className={cn(
                 "relative mx-auto w-64 h-64 rounded-2xl overflow-hidden",

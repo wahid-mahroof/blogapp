@@ -31,9 +31,18 @@ const TopArticles = () => {
             <span> wahid Mahroof</span>
           </div>
 
-          <h3 className="text-lg font-semibold mt-2">
+          <h3 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
             How to become frontend developer in 2024
           </h3>
+
+          <p className="mt-2 text-gray-600 dark:text-white">Web devlopment</p>
+          <div
+            className="mt-6 flex items-center
+           justify-between text-sm text-gray-500 dark:text-gray-400"
+          >
+            <span className="">12 feb</span>
+            <span className="">{12} min to read</span>
+          </div>
         </div>
       </Card>
     </div>
