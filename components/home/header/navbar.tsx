@@ -1,12 +1,15 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../ui/button";
 import SearchInput from "./search-input";
 import ToggleMode from "./toggle-mode";
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <div className="sticky top-0 z-50 w-full border border-b bg-background/95 backdrop-blur supports-[bcakground-filter]:bg-background/60 ">
+    <div className="sticky top-0 z-50 w-full  border-b bg-background/95 backdrop-blur supports-[background-filter]:bg-background/60 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8  ">
         <div className="flex  h-16 items-center justify-between">
           {/* left section*/}
