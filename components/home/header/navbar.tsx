@@ -5,6 +5,15 @@ import React, { useState } from "react";
 import { Button } from "../../ui/button";
 import SearchInput from "./search-input";
 import ToggleMode from "./toggle-mode";
+import { Menu, Search, X } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,13 +64,57 @@ const Navbar = () => {
           <div className="flex items-center gap-4 ">
             <SearchInput />
             <ToggleMode />
-            <div className="hidden md:flex items-center gap-2">
-              <Button>Login</Button>
-              <Button>Signup</Button>
+
+            {/* user action */}
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+
+            <SignedOut>
+              <div className="hidden md:flex items-center gap-2">
+                <SignInButton>
+                  <Button variant={"outline"}>Login</Button>
+                </SignInButton>
+                <SignUpButton>
+                  <Button>Signup</Button>
+                </SignUpButton>
+              </div>
+            </SignedOut>
+          </div>
+
+          {/* Mobile Menu  button */}
+          <Button
+            variant={"ghost"}
+            size={"icon"}
+            className="md:hidden text-muted-foreground hover:text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          />
+          <Button>
+            {isMobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5 " />
+            )}
+          </Button>
+        </div>
+      </div>
+
+      {/* mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden py-4 space-y-4 border-t">
+          {/* search bar */}
+          <div className="px-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                type="search"
+                placeholder="Search articles..."
+                className="pl-10 w-full focus-visible:ring-1"
+              />
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
