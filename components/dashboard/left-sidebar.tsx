@@ -11,8 +11,10 @@ import {
   Sheet,
 } from "lucide-react";
 import { SheetTrigger } from "../ui/sheet";
+import { useState } from "react";
 
 const LeftSidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <Sheet>
