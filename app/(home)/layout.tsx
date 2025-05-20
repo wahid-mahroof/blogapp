@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import { Prisma } from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
 
 import React from "react";
@@ -8,12 +8,12 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
 
   if (!user) return null;
 
-  const loggedInUser = await prisma.user.findUnique({
+  const loggedInUser = await Prisma.user.findUnique({
     where: { clerkUserId: user.id },
   });
 
   if (!loggedInUser) {
-    await prisma.user.create({
+    await Prisma.user.create({
       data: {
         name: user.fullName as string,
         clerkUserId: user.id,

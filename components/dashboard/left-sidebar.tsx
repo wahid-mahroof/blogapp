@@ -1,52 +1,60 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import {
+  FileText,
+  LayoutDashboard,
+  LayoutDashboardIcon,
+  Link,
+  MessageCircle,
   Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+} from "lucide-react";
+import { SheetTrigger } from "../ui/sheet";
 
 const LeftSidebar = () => {
   return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Open</Button>
-      </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
-        </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
-      </SheetContent>
-    </Sheet>
+    <div>
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button>
+            <LayoutDashboard className="h-5 w-5" />
+          </Button>
+        </SheetTrigger>
+      </Sheet>
+    </div>
   );
 };
 
 export default LeftSidebar;
+
+const DashboardSidebar = () => {
+  return (
+    <div className="h-full px-4 py-6">
+      <div className="flex items-center gap-2 mb-8 px-2">
+        <Link href="/dashboard">
+          <span className="text-xl font-bold">ByteCode</span>
+        </Link>
+      </div>
+
+      <nav>
+        <Link href="/dashboard">
+          <Button variant={"ghost"} className="w-full justify-start">
+            <FileText className="w-5 h-5 mr-2" />
+            Articles
+          </Button>
+        </Link>
+        <Link href="/dashboard">
+          <Button variant={"ghost"} className="w-full justify-start">
+            <LayoutDashboardIcon className="w-5 h-5 mr-2" />
+            Overview
+          </Button>
+        </Link>
+        <Link href="/dashboard">
+          <Button variant={"ghost"} className="w-full justify-start">
+            <MessageCircle className="w-5 h-5 mr-2" />
+            Overview
+          </Button>
+        </Link>
+      </nav>
+    </div>
+  );
+};
