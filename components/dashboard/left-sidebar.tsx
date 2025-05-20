@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 
 import {
+  BarChart,
   FileText,
   LayoutDashboard,
   LayoutDashboardIcon,
   Link,
   MessageCircle,
+  Settings,
   Sheet,
 } from "lucide-react";
 import { SheetTrigger } from "../ui/sheet";
@@ -15,7 +17,7 @@ const LeftSidebar = () => {
     <div>
       <Sheet>
         <SheetTrigger asChild>
-          <Button>
+          <Button variant={"outline"}>
             <LayoutDashboard className="h-5 w-5" />
           </Button>
         </SheetTrigger>
@@ -50,8 +52,20 @@ const DashboardSidebar = () => {
         </Link>
         <Link href="/dashboard">
           <Button variant={"ghost"} className="w-full justify-start">
+            <BarChart className="w-5 h-5 mr-2" />
+            Analytic
+          </Button>
+        </Link>
+        <Link href="/dashboard">
+          <Button variant={"ghost"} className="w-full justify-start">
             <MessageCircle className="w-5 h-5 mr-2" />
-            Overview
+            Comments
+          </Button>
+        </Link>
+        <Link href="/dashboard">
+          <Button variant={"ghost"} className="w-full justify-start">
+            <Settings className="w-5 h-5 mr-2" />
+            Settings
           </Button>
         </Link>
       </nav>
