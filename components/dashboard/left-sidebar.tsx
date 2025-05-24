@@ -17,7 +17,7 @@ const LeftSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <Sheet>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button variant={"outline"}>
             <LayoutDashboard className="h-5 w-5" />
