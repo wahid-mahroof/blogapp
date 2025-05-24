@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 
 import {
@@ -10,7 +11,7 @@ import {
   Settings,
   Sheet,
 } from "lucide-react";
-import { SheetTrigger } from "../ui/sheet";
+import { SheetContent, SheetTrigger } from "../ui/sheet";
 import { useState } from "react";
 
 const LeftSidebar = () => {
@@ -23,7 +24,13 @@ const LeftSidebar = () => {
             <LayoutDashboard className="h-5 w-5" />
           </Button>
         </SheetTrigger>
+        <SheetContent side={"left"} className="w-[250]">
+          <DashboardSidebar />
+        </SheetContent>
       </Sheet>
+      <div className="hidden md:block h-screen w-[250px] border-r bg-background">
+        <DashboardSidebar />
+      </div>
     </div>
   );
 };
