@@ -13,8 +13,10 @@ const BlogDashboard = () => {
           </div>
 
           <Link href="/dashbaord/articles/create">
-            <PlusCircle className="h-4 w-4" />
-            <Button>new Article</Button>
+            <Button>
+              <PlusCircle className="h-4 w-4" />
+              new Article
+            </Button>
           </Link>
         </div>
       </main>
