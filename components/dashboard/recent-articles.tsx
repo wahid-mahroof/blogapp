@@ -1,6 +1,8 @@
 import React from "react";
-import { Card, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
+
+import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 function RecentArticles() {
   return (
@@ -8,9 +10,24 @@ function RecentArticles() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="">RecentArticles</CardTitle>
-          <Button>View All</Button>
+          <Button
+            className="text-muted-foreground "
+            size="sm"
+            variant={"ghost"}
+          >
+            View All
+          </Button>
         </div>
       </CardHeader>
+      <CardContent>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Title</TableHead>
+            </TableRow>
+          </TableHeader>
+        </Table>
+      </CardContent>
     </Card>
   );
 }
