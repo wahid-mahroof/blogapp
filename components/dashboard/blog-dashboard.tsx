@@ -36,7 +36,7 @@ const BlogDashboard = () => {
               <p>+5 from last month</p>
             </CardContent>
           </Card>
-          <CardHeader>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="font-medium text-sm">
               Total Comments{" "}
             </CardTitle>
@@ -47,7 +47,7 @@ const BlogDashboard = () => {
             <p>12 waiting moderative</p>
           </CardContent>
           <Card>
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="font-medium text-sm">
                 Avg Rating time{" "}
               </CardTitle>
