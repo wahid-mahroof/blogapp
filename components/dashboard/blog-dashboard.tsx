@@ -2,6 +2,7 @@ import { FileText, Link, MessageCircle, PlusCircle } from "lucide-react";
 import React from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import RecentArticles from "./recent-articles";
 
 const BlogDashboard = () => {
   return (
@@ -33,7 +34,9 @@ const BlogDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">2</div>
-              <p>+5 from last month</p>
+              <p className="text-sm text-muted-foreground">
+                +5 from last month
+              </p>
             </CardContent>
           </Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -44,7 +47,9 @@ const BlogDashboard = () => {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">2</div>
-            <p>12 waiting moderative</p>
+            <p className="text-sm text-muted-foreground">
+              12 waiting moderative
+            </p>
           </CardContent>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -55,10 +60,14 @@ const BlogDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">2</div>
-              <p>+5 from last month</p>
+              <p className="text-sm text-muted-foreground">
+                0.6 last month month
+              </p>
             </CardContent>
           </Card>
         </div>
+
+        <RecentArticles />
       </main>
     </div>
   );
