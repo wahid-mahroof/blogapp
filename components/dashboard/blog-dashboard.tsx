@@ -1,6 +1,7 @@
-import { Link, PlusCircle } from "lucide-react";
+import { FileText, Link, MessageCircle, PlusCircle } from "lucide-react";
 import React from "react";
 import { Button } from "../ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 const BlogDashboard = () => {
   return (
@@ -18,6 +19,34 @@ const BlogDashboard = () => {
               new Article
             </Button>
           </Link>
+        </div>
+
+        {/* quick stats */}
+
+        <div>
+          <Card>
+            <CardHeader>
+              <CardTitle className="font-medium text-sm">
+                Total Articles{" "}
+              </CardTitle>
+              <FileText className="h-4 w-4" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">2</div>
+              <p>+5 from last month</p>
+            </CardContent>
+          </Card>
+          <CardHeader>
+            <CardTitle className="font-medium text-sm">
+              Total Comments{" "}
+            </CardTitle>
+            <MessageCircle className="h-4 w-4" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">2</div>
+            <p>12 waiting moderative</p>
+          </CardContent>
+          <Card></Card>
         </div>
       </main>
     </div>
