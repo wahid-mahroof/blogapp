@@ -23,9 +23,9 @@ const BlogDashboard = () => {
 
         {/* quick stats */}
 
-        <div>
+        <div className="grid md:grid-cols-3 mb-8 gap-4">
           <Card>
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="font-medium text-sm">
                 Total Articles{" "}
               </CardTitle>
@@ -46,7 +46,18 @@ const BlogDashboard = () => {
             <div className="text-2xl font-bold">2</div>
             <p>12 waiting moderative</p>
           </CardContent>
-          <Card></Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="font-medium text-sm">
+                Avg Rating time{" "}
+              </CardTitle>
+              <FileText className="h-4 w-4" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">2</div>
+              <p>+5 from last month</p>
+            </CardContent>
+          </Card>
         </div>
       </main>
     </div>
