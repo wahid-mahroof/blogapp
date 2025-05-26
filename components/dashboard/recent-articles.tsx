@@ -53,7 +53,7 @@ function RecentArticles() {
               <TableCell>2</TableCell>
               <TableCell>12 feb</TableCell>
               <TableCell>
-                <div>
+                <div className="flex gap-2">
                   <Link href="/dashboard/articles/${123}/edit" />
                   <Button variant={"ghost"} size={"sm"}>
                     Edit
@@ -69,3 +69,13 @@ function RecentArticles() {
 }
 
 export default RecentArticles;
+
+const DeleteButton = () => {
+  return (
+    <form>
+      <Button variant={"ghost"} size={"sm"} type="submit">
+        Delete
+      </Button>
+    </form>
+  );
+};
