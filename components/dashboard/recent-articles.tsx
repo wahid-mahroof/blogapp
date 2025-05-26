@@ -2,7 +2,14 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
 
-import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 function RecentArticles() {
   return (
@@ -24,8 +31,20 @@ function RecentArticles() {
           <TableHeader>
             <TableRow>
               <TableHead>Title</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead>Comments</TableHead>
+              <TableHead>Data</TableHead>
+              <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
+
+          <TableBody>
+            <TableRow>
+              <TableCell>
+                <span>Published</span>
+              </TableCell>
+            </TableRow>
+          </TableBody>
         </Table>
       </CardContent>
     </Card>
