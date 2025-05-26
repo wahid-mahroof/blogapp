@@ -10,7 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Badge } from "lucide-react";
+import { Badge, Link } from "lucide-react";
 
 function RecentArticles() {
   return (
@@ -41,6 +41,7 @@ function RecentArticles() {
 
           <TableBody>
             <TableRow>
+              <TableCell>Title</TableCell>
               <TableCell>
                 <Badge
                   fontVariant={"secondary"}
@@ -48,6 +49,16 @@ function RecentArticles() {
                 >
                   Published
                 </Badge>
+              </TableCell>
+              <TableCell>2</TableCell>
+              <TableCell>12 feb</TableCell>
+              <TableCell>
+                <div>
+                  <Link href="/dashboard/articles/${123}/edit" />
+                  <Button variant={"ghost"} size={"sm"}>
+                    Edit
+                  </Button>
+                </div>
               </TableCell>
             </TableRow>
           </TableBody>
