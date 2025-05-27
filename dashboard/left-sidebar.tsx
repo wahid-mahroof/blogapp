@@ -11,7 +11,7 @@ import {
   Settings,
   Sheet,
 } from "lucide-react";
-import { SheetContent, SheetTrigger } from "../ui/sheet";
+import { SheetContent, SheetTrigger } from "../components/ui/sheet";
 import { useState } from "react";
 
 const LeftSidebar = () => {
