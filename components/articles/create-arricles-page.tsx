@@ -1,6 +1,7 @@
 import React from "react";
 import { CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
+import { Label } from "@radix-ui/react-dropdown-menu";
 
 function CreateArticlesPage() {
   return (
@@ -17,6 +18,13 @@ function CreateArticlesPage() {
               placeholder="Enter a article title"
             />
           </div>
+          <Label>Category</Label>
+          <select>
+            <option value="">Select category</option>
+            <option value="technology">technology</option>
+            <option value="programming">Programming</option>
+            <option value="web-debelopment">Web dvelopment</option>
+          </select>
         </form>
       </CardContent>
     </div>
