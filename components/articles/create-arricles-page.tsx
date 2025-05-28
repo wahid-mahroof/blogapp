@@ -19,12 +19,17 @@ function CreateArticlesPage() {
             />
           </div>
           <Label>Category</Label>
-          <select>
-            <option value="">Select category</option>
-            <option value="technology">technology</option>
-            <option value="programming">Programming</option>
-            <option value="web-debelopment">Web dvelopment</option>
-          </select>
+          <div>
+            <select className="flex h-10 w-full rounded-md">
+              <option value="">Select category</option>
+              <option value="technology">technology</option>
+              <option value="programming">Programming</option>
+              <option value="web-debelopment">Web dvelopment</option>
+            </select>
+          </div>
+          <div className="space-y-2">
+            <Label>featured Image</Label>
+          </div>
         </form>
       </CardContent>
     </div>
