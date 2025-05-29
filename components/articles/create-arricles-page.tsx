@@ -2,6 +2,9 @@ import React from "react";
 import { CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
+import dynamic from "next/dynamic";
+
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
 function CreateArticlesPage() {
   return (
@@ -37,7 +40,7 @@ function CreateArticlesPage() {
             />
           </div>
           <div className="space-y-2">
-            <Label>Conetnt</Label>
+            <Label>Content</Label>
           </div>
         </form>
       </CardContent>
