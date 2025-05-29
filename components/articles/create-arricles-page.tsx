@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import dynamic from "next/dynamic";
 import { Button } from "../ui/button";
+import "react-quill-new/dist/quill.snow.css";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
@@ -46,7 +47,8 @@ function CreateArticlesPage() {
             <ReactQuill theme="snow" value={content} onChange={setContent} />
           </div>
           <div className="flex justify-end gap-4">
-            <Button>Cancel</Button>
+            <Button variant={"outline"}>Cancel</Button>
+            <Button type="submit">Publish Articles</Button>
           </div>
         </form>
       </CardContent>
