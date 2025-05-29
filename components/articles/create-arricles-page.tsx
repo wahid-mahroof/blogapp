@@ -29,6 +29,15 @@ function CreateArticlesPage() {
           </div>
           <div className="space-y-2">
             <Label>featured Image</Label>
+            <Input
+              type="file"
+              id="featuredImage"
+              name="featuredImage"
+              accept="image/*"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label>Conetnt</Label>
           </div>
         </form>
       </CardContent>
