@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import dynamic from "next/dynamic";
+import { Button } from "../ui/button";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
 function CreateArticlesPage() {
+  const [content, setContent] = useState();
   return (
     <div className="max-4 mx-auto p-6">
       <CardHeader>
@@ -41,6 +43,10 @@ function CreateArticlesPage() {
           </div>
           <div className="space-y-2">
             <Label>Content</Label>
+            <ReactQuill theme="snow" value={content} onChange={setContent} />
+          </div>
+          <div className="flex justify-end gap-4">
+            <Button>Cancel</Button>
           </div>
         </form>
       </CardContent>
