@@ -59,6 +59,10 @@ function CreateArticlesPage() {
           <div className="space-y-2">
             <Label>Content</Label>
             <ReactQuill theme="snow" value={content} onChange={setContent} />
+            {formState.error.content && (
+              <span className="text-red-600 text-sm">
+                {formState.error.content}
+              </span>
           </div>
           <div className="flex justify-end gap-4">
             <Button variant={"outline"}>Cancel</Button>
