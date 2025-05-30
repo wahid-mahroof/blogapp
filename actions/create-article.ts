@@ -1,4 +1,6 @@
 "use server ";
+import { auth } from "@clerk/nextjs/server";
+import { promises } from "dns";
 import { Cagliostro } from "next/font/google";
 import { z } from "Zod";
 
@@ -8,7 +10,7 @@ const createArticleSchema = z.object({
   content: z.string().min(10),
 });
 
-type createArticlesFormstatec = {
+type createArticlesFormstate = {
   error: {
     title?: string[];
     Category?: string[];
@@ -17,7 +19,9 @@ type createArticlesFormstatec = {
     formError?: string[];
   };
 };
-export const createArticle = async (formData: FormData) => {
+export const createArticle = async (
+  formData: FormData
+): Promise<createArticlesFormstate> => {
   const result = createArticleSchema.safeParse({
     title: formData.get("title"),
     category: formData.get("category"),
@@ -25,5 +29,18 @@ export const createArticle = async (formData: FormData) => {
   });
 
   if (!result.success) {
+    return {
+      error: result.error.flatten().fieldErrors,
+    };
   }
+  const { userId } = await auth();
+  if (!userId) {
+    return {
+      error: {
+        formError: ["you have to login first"],
+      },
+    };
+  }
+  // start creating articles
+  redirect("/dashboard");
 };
