@@ -21,7 +21,7 @@ function CreateArticlesPage() {
         <CardTitle>Create New Article</CardTitle>
       </CardHeader>
       <CardContent>
-        <form className="space-y-6">
+        <form action={action} className="space-y-6">
           <div className="space-y-2">
             <Input
               type="text"
