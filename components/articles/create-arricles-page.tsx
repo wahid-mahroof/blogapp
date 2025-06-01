@@ -66,7 +66,11 @@ function CreateArticlesPage() {
           </div>
           <div className="flex justify-end gap-4">
             <Button variant={"outline"}>Cancel</Button>
-            <Button type="submit">Publish Articles</Button>
+            <Button type="submit" disabled={isPending}>
+              {
+                isPending ? "Loading..." : "Public Article"
+              }
+            </Button>
           </div>
         </form>
       </CardContent>

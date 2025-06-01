@@ -1,7 +1,8 @@
 "use server ";
 import { auth } from "@clerk/nextjs/server";
 import { promises } from "dns";
-import { Cagliostro } from "next/font/google";
+import { redirect } from "next/dist/server/api-utils";
+
 import { z } from "Zod";
 
 const createArticleSchema = z.object({
@@ -19,9 +20,9 @@ type createArticlesFormstate = {
     formError?: string[];
   };
 };
-export const createArticle = async (
-  formData: FormData
-): Promise<createArticlesFormstate> => {
+export const createArticle = async (prevState:createArticlesFormstate,)
+  FormData:FormData
+: Promise<createArticlesFormstate> => {
   const result = createArticleSchema.safeParse({
     title: formData.get("title"),
     category: formData.get("category"),
