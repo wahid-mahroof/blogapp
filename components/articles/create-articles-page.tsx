@@ -36,7 +36,7 @@ function CreateArticlesPage() {
           </div>
           <Label>Category</Label>
           <div>
-            <select className="flex h-10 w-full rounded-md">
+            <select className="flex h-10 w-full rounded-md" name="category" id="category">
               <option value="">Select category</option>
               <option value="technology">technology</option>
               <option value="programming">Programming</option>
