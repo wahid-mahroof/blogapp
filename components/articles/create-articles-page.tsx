@@ -61,7 +61,7 @@ function CreateArticlesPage() {
             <ReactQuill theme="snow" value={content} onChange={setContent} />
             {formState.error.content && (
               <span className="text-red-600 text-sm">
-                {formState.error.content}
+                {formState.error.content[0]}
               </span>
           </div>
           <div className="flex justify-end gap-4">

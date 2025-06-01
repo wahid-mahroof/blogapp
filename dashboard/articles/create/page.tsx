@@ -1,4 +1,4 @@
-import CreateArticlesPage from "@/components/articles/create-arricles-page";
+import CreateArticlesPage from "@/components/articles/create-articles-page";
 import React from "react";
 
 function page() {
