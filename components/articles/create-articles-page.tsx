@@ -1,4 +1,4 @@
-import React, { FormEvent, useActionState, useState } from "react";
+import React, { FormEvent, startTransition, useActionState, useState } from "react";
 import { CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
@@ -19,14 +19,20 @@ function CreateArticlesPage() {
   const handlesubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-  }
+  
+  FormData.append("content",content);
+
+  startTransition(() => {
+    action(FormData);
+  })
+}
   return (
     <div className="max-4 mx-auto p-6">
       <CardHeader>
         <CardTitle>Create New Article</CardTitle>
       </CardHeader>
       <CardContent>
-        <form action={action} className="space-y-6">
+        <form onSubmit={handlesubmit} className="space-y-6">
           <div className="space-y-2">
             <Input
               type="text"
