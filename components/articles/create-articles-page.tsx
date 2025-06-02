@@ -1,4 +1,4 @@
-import React, { useActionState, useState } from "react";
+import React, { FormEvent, useActionState, useState } from "react";
 import { CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
@@ -15,6 +15,11 @@ function CreateArticlesPage() {
   const [formState, action, isPending] = useActionState(createArticle, {
     error: {},
   });
+
+  const handlesubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+  }
   return (
     <div className="max-4 mx-auto p-6">
       <CardHeader>
