@@ -45,10 +45,10 @@ export const createArticle = async (prevState:createArticlesFormstate,)
   // start creating articles
 
   const imageFile = formData.get('featuredImage') as File | null;
-  if(imageFile) || imageFile={.name === "undefined"}{
+  if(!imageFile || imageFile.name === "undefined"){
     return{
       error:{
-        featuredImage:{'image file'}
+        featuredImage:['image file is required']
       }
     }
   }
