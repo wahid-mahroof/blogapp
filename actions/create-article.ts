@@ -21,7 +21,7 @@ type createArticlesFormstate = {
   };
 };
 export const createArticle = async (prevState:createArticlesFormstate,)
-  FormData:FormData
+  formData:formData
 : Promise<createArticlesFormstate> => {
   const result = createArticleSchema.safeParse({
     title: formData.get("title"),
@@ -43,5 +43,14 @@ export const createArticle = async (prevState:createArticlesFormstate,)
     };
   }
   // start creating articles
+
+  const imageFile = formData.get('featuredImage') as File | null;
+  if(imageFile) || imageFile={.name === "undefined"}{
+    return{
+      error:{
+        featuredImage:{'image file'}
+      }
+    }
+  }
   redirect("/dashboard");
 };
