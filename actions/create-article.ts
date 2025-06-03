@@ -52,5 +52,8 @@ export const createArticle = async (prevState:createArticlesFormstate,)
       }
     }
   }
+
+  const arrayBuffer = await imageFile.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
   redirect("/dashboard");
 };
