@@ -6,6 +6,8 @@ import { redirect } from "next/dist/server/api-utils";
 import { z } from "Zod";
 
 import {v2 as cloundinary , UploadApiResponse} from "cloudinary";
+import { resolve } from "path";
+import { rejects } from "assert";
 cloundinary.config({
   cloud_name:process.env.CLOUD_NAME,
   api_key:process.env.API_KEY,
@@ -64,6 +66,15 @@ export const createArticle = async (prevState:createArticlesFormstate,)
   const arrayBuffer = await imageFile.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
 
-  const uploadResponse : 
+  const uploadResponse :  UploadApiResponse | undefined = await new Promise((resolve,rejects) => {
+    const uploadStream = cloundinary.uploader.upload_stream(
+      {resource_type:"auto"},
+      (error,result) => {
+        if(error){
+          rejects(error)
+        }
+      }
+    )
+  })
   redirect("/dashboard");
 };
