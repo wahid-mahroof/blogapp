@@ -72,6 +72,8 @@ export const createArticle = async (prevState:createArticlesFormstate,)
       (error,result) => {
         if(error){
           rejects(error)
+        }else{
+          resolve(result)
         }
       }
     )
