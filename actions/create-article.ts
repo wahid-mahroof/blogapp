@@ -5,6 +5,14 @@ import { redirect } from "next/dist/server/api-utils";
 
 import { z } from "Zod";
 
+import {v2 as cloundinary , UploadApiResponse} from "cloudinary";
+cloundinary.config({
+  cloud_name:process.env.CLOUD_NAME,
+  api_key:process.env.API_KEY,
+  api_secret:process.env.API_SECRET
+})
+
+
 const createArticleSchema = z.object({
   titlt: z.string().min(3).max(100),
   category: z.string().min(3).max(50),
@@ -55,5 +63,7 @@ export const createArticle = async (prevState:createArticlesFormstate,)
 
   const arrayBuffer = await imageFile.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
+
+  const uploadResponse : 
   redirect("/dashboard");
 };
