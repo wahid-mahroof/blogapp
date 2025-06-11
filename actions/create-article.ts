@@ -66,7 +66,7 @@ export const createArticle = async (prevState:createArticlesFormstate,)
   const arrayBuffer = await imageFile.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
 
-  const uploadResponse :  UploadApiResponse | undefined = await new Promise((resolve,resolve,rejects) => {
+  const uploadResponse :  UploadApiResponse | undefined = await new Promise((resolve,rejects) => {
     const uploadStream = cloundinary.uploader.upload_stream(
       {resource_type:"auto"},
       (error,result) => {
