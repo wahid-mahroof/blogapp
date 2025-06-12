@@ -76,7 +76,19 @@ export const createArticle = async (prevState:createArticlesFormstate,)
           resolve(result)
         }
       }
-    )
+    );
+    uploadStream.end(buffer);
   })
+
+  const imageUrl = uploadResponse?.secure_url;
+
+  if(!imageUrl) {
+    return {
+      error:{
+        featuredImage:["failled to upload image,please try again"]
+      }
+    }
+  }
+
   redirect("/dashboard");
 };
