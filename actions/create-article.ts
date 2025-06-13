@@ -89,6 +89,21 @@ export const createArticle = async (prevState:createArticlesFormstate,)
       }
     }
   }
+  try {
+    await Prisma.articles.create({
+      data:{
+        title:result.data.title,
+        category:result.data.content,
+        content:result.data.content,
+        featuredImage:imageUrl,
+        authorid
+      }
+    })
+  } catch (
+    
+  ) {
+    
+  }
 
   redirect("/dashboard");
 };
