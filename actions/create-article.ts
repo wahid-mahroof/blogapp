@@ -8,6 +8,7 @@ import { z } from "Zod";
 import {v2 as cloundinary , UploadApiResponse} from "cloudinary";
 import { resolve } from "path";
 import { rejects } from "assert";
+import { Prisma } from "@/lib/prisma";
 cloundinary.config({
   cloud_name:process.env.CLOUD_NAME,
   api_key:process.env.API_KEY,
@@ -52,6 +53,10 @@ export const createArticle = async (prevState:createArticlesFormstate,)
       },
     };
   }
+
+  const existingUser = await Prisma.user.findUnique({
+    where:{clerkUserId:userId}
+  })
   // start creating articles
 
   const imageFile = formData.get('featuredImage') as File | null;
@@ -96,7 +101,7 @@ export const createArticle = async (prevState:createArticlesFormstate,)
         category:result.data.content,
         content:result.data.content,
         featuredImage:imageUrl,
-        authorid
+        authorid:existingUser
       }
     })
   } catch (
