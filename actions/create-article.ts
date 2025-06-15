@@ -57,6 +57,13 @@ export const createArticle = async (prevState:createArticlesFormstate,)
   const existingUser = await Prisma.user.findUnique({
     where:{clerkUserId:userId}
   })
+  if(!existingUser){
+    return {
+      errors:{
+        formErrors:["User not found  register before creating an article"]
+      }
+    }
+  }
   // start creating articles
 
   const imageFile = formData.get('featuredImage') as File | null;
