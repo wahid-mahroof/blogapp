@@ -116,8 +116,12 @@ export const createArticle = async (prevState:createArticlesFormstate,)
   ) {
     if(error instanceof Error){
       return {
-        errors:PageTransitionEvent
+        errors:{
+          formErrors:[error.message]
+        }
       }
+    }else{
+      
     }
   }
 
