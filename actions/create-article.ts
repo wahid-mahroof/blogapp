@@ -112,9 +112,13 @@ export const createArticle = async (prevState:createArticlesFormstate,)
       }
     })
   } catch (
-    
+    error:unknown 
   ) {
-    
+    if(error instanceof Error){
+      return {
+        errors:PageTransitionEvent
+      }
+    }
   }
 
   redirect("/dashboard");
