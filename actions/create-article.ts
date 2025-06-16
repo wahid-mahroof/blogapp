@@ -121,7 +121,9 @@ export const createArticle = async (prevState:createArticlesFormstate,)
         }
       }
     }else{
-      
+      error:{
+        formErros:["some  internak error occured"]
+      }
     }
   }
 
