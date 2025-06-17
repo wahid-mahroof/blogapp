@@ -126,6 +126,6 @@ export const createArticle = async (prevState:createArticlesFormstate,)
       }
     }
   }
-
+  revalidatePath("/dashboard");
   redirect("/dashboard");
 };
