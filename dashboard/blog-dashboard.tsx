@@ -16,7 +16,14 @@ const BlogDashboard = async () => {
       orderBy: {
         createdAt: "desc",
       },
-      include: {},
+      include: {
+        comments: true,
+        author: {
+          name: true,
+          email: true,
+          imageUrl: true,
+        },
+      },
     }),
   ]);
   return (
