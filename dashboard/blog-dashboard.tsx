@@ -57,7 +57,7 @@ const BlogDashboard = async () => {
               <FileText className="h-4 w-4" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">2</div>
+              <div className="text-2xl font-bold">{articles.lenght}</div>
               <p className="text-sm text-muted-foreground">
                 +5 from last month
               </p>
@@ -70,7 +70,7 @@ const BlogDashboard = async () => {
             <MessageCircle className="h-4 w-4" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">2</div>
+            <div className="text-2xl font-bold">{totalComments}</div>
             <p className="text-sm text-muted-foreground">
               12 waiting moderative
             </p>
