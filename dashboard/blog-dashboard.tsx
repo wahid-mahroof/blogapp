@@ -8,8 +8,14 @@ import {
   CardTitle,
 } from "../components/ui/card";
 import RecentArticles from "./recent-articles";
+import { Prisma } from "@/lib/prisma";
 
-const BlogDashboard = () => {
+const BlogDashboard = async () => {
+  const [articles, totalComments] = await Promise.all([
+    Prisma.articles.findMany({
+      orderBy: {},
+    }),
+  ]);
   return (
     <div>
       <main className="flex-1 p-4 md:p-8">
