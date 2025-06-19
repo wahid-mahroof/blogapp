@@ -19,12 +19,15 @@ const BlogDashboard = async () => {
       include: {
         comments: true,
         author: {
-          name: true,
-          email: true,
-          imageUrl: true,
+          select: {
+            name: true,
+            email: true,
+            imageUrl: true,
+          },
         },
       },
     }),
+    Prisma.comment.count(),
   ]);
   return (
     <div>
