@@ -1,4 +1,4 @@
-import { FileText, Link, MessageCircle, PlusCircle } from "lucide-react";
+import { Clock, FileText, Link, MessageCircle, PlusCircle } from "lucide-react";
 import React from "react";
 import { Button } from "../components/ui/button";
 import {
@@ -80,7 +80,7 @@ const BlogDashboard = async () => {
               <CardTitle className="font-medium text-sm">
                 Avg Rating time{" "}
               </CardTitle>
-              <FileText className="h-4 w-4" />
+              <Clock className="h-4 w-4" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">2</div>
@@ -91,7 +91,7 @@ const BlogDashboard = async () => {
           </Card>
         </div>
 
-        <RecentArticles />
+        <RecentArticles articles={articles} />
       </main>
     </div>
   );
