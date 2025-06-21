@@ -18,7 +18,7 @@ import {
 import { Badge, Link } from "lucide-react";
 import { Prisma } from "@prisma/client";
 
-type RecentArticlesprops = {
+type RecentArticlesProps = {
   articles:Prisma.ArticlesGetPayload>{
     include:{
       comments: true;
@@ -34,7 +34,7 @@ type RecentArticlesprops = {
   }>[];
 };
 
-function RecentArticles() {
+function RecentArticles : React.FC<RecentArticlesProps> = ({articles}) {
   return (
     <Card className="mb-8">
       <CardHeader>
