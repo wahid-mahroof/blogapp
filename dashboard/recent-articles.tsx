@@ -16,6 +16,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge, Link } from "lucide-react";
+import { Prisma } from "@prisma/client";
+
+type RecentArticleprops = {
+  articles:Prisma.ArticlesGetPlayload>{
+    
+  }>
+}
 
 function RecentArticles() {
   return (
