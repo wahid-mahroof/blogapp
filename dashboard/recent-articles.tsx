@@ -18,11 +18,21 @@ import {
 import { Badge, Link } from "lucide-react";
 import { Prisma } from "@prisma/client";
 
-type RecentArticleprops = {
-  articles:Prisma.ArticlesGetPlayload>{
-    
-  }>
-}
+type RecentArticlesprops = {
+  articles:Prisma.ArticlesGetPayload>{
+    include:{
+      comments: true;
+      author: {
+        select: {
+          name:true;
+          email:true;
+          imageUrl:true
+        }
+      }
+      }
+    }
+  }>[];
+};
 
 function RecentArticles() {
   return (
