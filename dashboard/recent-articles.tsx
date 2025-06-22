@@ -49,43 +49,52 @@ function RecentArticles : React.FC<RecentArticlesProps> = ({articles}) {
           </Button>
         </div>
       </CardHeader>
-      <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Title</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Comments</TableHead>
-              <TableHead>Data</TableHead>
-              <TableHead>Actions</TableHead>
-            </TableRow>
-          </TableHeader>
 
-          <TableBody>
-            <TableRow>
-              <TableCell>Title</TableCell>
-              <TableCell>
-                <Badge
-                  fontVariant={"secondary"}
-                  className="rounded-full bg-green-100 text-green-800"
-                >
-                  Published
-                </Badge>
-              </TableCell>
-              <TableCell>2</TableCell>
-              <TableCell>12 feb</TableCell>
-              <TableCell>
-                <div className="flex gap-2">
-                  <Link href="/dashboard/articles/${123}/edit" />
-                  <Button variant={"ghost"} size={"sm"}>
-                    Edit
-                  </Button>
-                </div>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </CardContent>
+
+      {
+        !articles.length ? (<CardContent> No articles
+
+        </CardContent>) : (
+ <CardContent>
+ <Table>
+   <TableHeader>
+     <TableRow>
+       <TableHead>Title</TableHead>
+       <TableHead>Status</TableHead>
+       <TableHead>Comments</TableHead>
+       <TableHead>Data</TableHead>
+       <TableHead>Actions</TableHead>
+     </TableRow>
+   </TableHeader>
+
+   <TableBody>
+     <TableRow>
+       <TableCell>Title</TableCell>
+       <TableCell>
+         <Badge
+           fontVariant={"secondary"}
+           className="rounded-full bg-green-100 text-green-800"
+         >
+           Published
+         </Badge>
+       </TableCell>
+       <TableCell>2</TableCell>
+       <TableCell>12 feb</TableCell>
+       <TableCell>
+         <div className="flex gap-2">
+           <Link href="/dashboard/articles/${123}/edit" />
+           <Button variant={"ghost"} size={"sm"}>
+             Edit
+           </Button>
+         </div>
+       </TableCell>
+     </TableRow>
+   </TableBody>
+ </Table>
+</CardContent>
+        )
+      }
+     
     </Card>
   );
 }
