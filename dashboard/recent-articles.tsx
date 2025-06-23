@@ -68,8 +68,9 @@ function RecentArticles : React.FC<RecentArticlesProps> = ({articles}) {
    </TableHeader>
 
    <TableBody>
-     <TableRow>
-       <TableCell>Title</TableCell>
+    {articles.map((article)=>(
+       <TableRow key={article.id}>
+       <TableCell>{article.title}</TableCell>
        <TableCell>
          <Badge
            fontVariant={"secondary"}
@@ -78,8 +79,8 @@ function RecentArticles : React.FC<RecentArticlesProps> = ({articles}) {
            Published
          </Badge>
        </TableCell>
-       <TableCell>2</TableCell>
-       <TableCell>12 feb</TableCell>
+       <TableCell>{article.comments.length}</TableCell>
+       <TableCell>{article.createdAt.toDateString}</TableCell>
        <TableCell>
          <div className="flex gap-2">
            <Link href="/dashboard/articles/${123}/edit" />
@@ -89,6 +90,9 @@ function RecentArticles : React.FC<RecentArticlesProps> = ({articles}) {
          </div>
        </TableCell>
      </TableRow>
+    ))
+    }
+    
    </TableBody>
  </Table>
 </CardContent>
