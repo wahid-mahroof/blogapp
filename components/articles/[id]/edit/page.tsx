@@ -10,7 +10,7 @@ import { error } from "console";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
-function CreateArticlesPage() {
+function EditArticlePage = () {
   const [content, setContent] = useState();
   const [formState, action, isPending] = useActionState(createArticle, {
     error: {},
@@ -89,4 +89,4 @@ function CreateArticlesPage() {
   );
 }
 
-export default CreateArticlesPage;
+export default EditArticlePage;
