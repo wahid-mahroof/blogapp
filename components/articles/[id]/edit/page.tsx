@@ -5,7 +5,9 @@ type EditArticleParams = {
   params:Promise<{id:string}>
 }
 
-const  page :React.FC<EditArticleParams>  async ({params}) {
+const  page :React.FC<EditArticleParams>  async ({params}) => {
+  const id = (await params).id;
+  const
   return (
     <div>
       <EditArticlePage />
