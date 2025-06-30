@@ -1,7 +1,7 @@
 import React from "react";
 import EditArticlePage from "../../edit-article-page";
 
-function page() {
+function page async () {
   return (
     <div>
       <EditArticlePage />
