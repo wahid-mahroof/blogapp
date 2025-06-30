@@ -1,7 +1,11 @@
 import React from "react";
 import EditArticlePage from "../../edit-article-page";
 
-function page async () {
+type EditArticleParams = {
+  params:Promise<{id:string}>
+}
+
+function page =  async () {
   return (
     <div>
       <EditArticlePage />
