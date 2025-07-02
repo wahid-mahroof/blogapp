@@ -11,6 +11,7 @@ const page: React.FC<EditArticleParams> = async ({ params }) => {
   const article = await Prisma.article.findunique({
     where: { id },
   });
+  if (!article) return <h1>Article not found gor this {id}</h1>;
   return (
     <div>
       <EditArticlePage />
