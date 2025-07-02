@@ -74,6 +74,7 @@ const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
               id="featuredImage"
               name="featuredImage"
               accept="image/*"
+              className=""
             />
           </div>
           <div className="space-y-2">
