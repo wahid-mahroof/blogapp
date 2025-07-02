@@ -7,8 +7,13 @@ import { Button } from "../ui/button";
 import "react-quill-new/dist/quill.snow.css";
 import { createArticle } from "@/actions/create-article";
 import { error } from "console";
+import type  { Articles } from "@/app/generated/prisma";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
+
+type EditArticleProps = {
+  article:Articles
+}
 
 function EditArticlePage() {
   const [content, setContent] = useState();

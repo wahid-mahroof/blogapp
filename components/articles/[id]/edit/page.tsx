@@ -14,7 +14,7 @@ const page: React.FC<EditArticleParams> = async ({ params }) => {
   if (!article) return <h1>Article not found gor this {id}</h1>;
   return (
     <div>
-      <EditArticlePage />
+      <EditArticlePage article={article} />
     </div>
   );
 };
