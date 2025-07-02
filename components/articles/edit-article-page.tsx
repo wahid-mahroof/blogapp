@@ -8,6 +8,7 @@ import "react-quill-new/dist/quill.snow.css";
 import { createArticle } from "@/actions/create-article";
 import { error } from "console";
 import type  { Articles } from "@/app/generated/prisma";
+import Image from "next/image";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
@@ -74,8 +75,14 @@ const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
               id="featuredImage"
               name="featuredImage"
               accept="image/*"
-              className=""
+              
             />
+            <Image 
+            src={article.featuredImage}
+            alt="featured-image"
+            className=""
+            />
+
           </div>
           <div className="space-y-2">
             <Label>Content</Label>
