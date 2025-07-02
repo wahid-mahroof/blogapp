@@ -15,7 +15,7 @@ type EditArticleProps = {
   article:Articles
 }
 
-function EditArticlePage() {
+const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
   const [content, setContent] = useState();
   const [formState, action, isPending] = useActionState(createArticle, {
     error: {},
