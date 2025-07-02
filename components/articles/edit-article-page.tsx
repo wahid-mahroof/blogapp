@@ -42,6 +42,7 @@ const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
             <Input
               type="text"
               name="title"
+              defaultValue={article.title}
               placeholder="Enter a article title"
             />
             {formState.error.title && (
