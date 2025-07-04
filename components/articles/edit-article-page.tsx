@@ -29,7 +29,7 @@ const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
   FormData.append("content",content);
 
   startTransition(() => {
-    action(FormData);
+    action(formData);
   })
 }
   return (
