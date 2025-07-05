@@ -77,6 +77,9 @@ const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
               accept="image/*"
               
             />
+            <div>
+              
+            </div>
             <Image 
             src={article.featuredImage}
             alt="featured-image"
