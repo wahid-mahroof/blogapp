@@ -105,7 +105,7 @@ const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
             <Button variant={"outline"}>Cancel</Button>
             <Button type="submit" disabled={isPending}>
               {
-                isPending ? "Loading..." : "Public Article"
+                isPending ? "Loading..." : "Edit Article"
               }
             </Button>
           </div>
