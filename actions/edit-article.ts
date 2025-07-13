@@ -10,7 +10,7 @@ import { resolve } from "path";
 import { rejects } from "assert";
 import { Prisma } from "@/lib/prisma";
 
-console.log(process.env.CLOUDINARY_CLOUD_NAME, process.env.CLOUDINARY_API_KEY, process.env.CLOUDINARY_API_SECRET)
+
 cloundinary.config({
   cloud_name:process.env.CLOUD_NAME,
   api_key:process.env.API_KEY,
