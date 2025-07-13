@@ -33,7 +33,7 @@ type createArticlesFormstate = {
     formError?: string[];
   };
 };
-export const editArticle = async (articleId:stringprevState:createArticlesFormstate,)
+export const editArticle = async (articleId:string,prevState:createArticlesFormstate,)
   formData:formData
 : Promise<createArticlesFormstate> => {
   const result = createArticleSchema.safeParse({
