@@ -60,7 +60,9 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
     where:{id:articleId}
   });
   if(!existingArticle){
-    
+    return {
+      errors:{formErrors:["article not found"]}
+    }
   }
 
   const existingUser = await Prisma.user.findUnique({
