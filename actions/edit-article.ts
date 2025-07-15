@@ -56,7 +56,9 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
     };
   }
 
-  const Existingarticle
+  const existingArticle = await Prisma.article.findunique({
+    where:{id:articleId}
+  });
 
   const existingUser = await Prisma.user.findUnique({
     where:{clerkUserId:userId}
