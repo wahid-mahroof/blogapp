@@ -113,7 +113,7 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
     }
   }
   try {
-    await Prisma.articles.create({
+    await Prisma.articles.update({
       data:{
         title:result.data.title,
         category:result.data.content,
