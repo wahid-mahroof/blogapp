@@ -9,6 +9,7 @@ import { createArticle } from "@/actions/create-article";
 import { error } from "console";
 import type  { Articles } from "@/app/generated/prisma";
 import Image from "next/image";
+import { editArticle } from "@/actions/edit-article";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
@@ -18,7 +19,7 @@ type EditArticleProps = {
 
 const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
   const [content, setContent] = useState(article.content);
-  const [formState, action, isPending] = useActionState(createArticle, {
+  const [formState, action, isPending] = useActionState(editArticle, {
     error: {},
   });
 
