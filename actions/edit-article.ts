@@ -114,12 +114,13 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
   }
   try {
     await Prisma.articles.update({
+      where:{id:articleId},
       data:{
         title:result.data.title,
         category:result.data.content,
         content:result.data.content,
         featuredImage:imageUrl,
-        authorid:existingUser
+      
       }
     })
   } catch (
