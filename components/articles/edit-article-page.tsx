@@ -19,7 +19,7 @@ type EditArticleProps = {
 
 const EditArticlePage : React.FC<EditArticleProps> = ({article}) =>  {
   const [content, setContent] = useState(article.content);
-  const [formState, action, isPending] = useActionState(editArticle, {
+  const [formState, action, isPending] = useActionState(editArticle.bind(null,article.id), {
     error: {},
   });
 
