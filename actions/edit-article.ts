@@ -103,7 +103,9 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
     uploadStream.end(buffer);
   })
 
-  const imageUrl = uploadResponse?.secure_url;
+  let imageurl = existingArticle.featuredImage;
+
+  if(uploadResponse)
 
   if(!imageUrl) {
     return {
