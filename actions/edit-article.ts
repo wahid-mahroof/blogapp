@@ -68,7 +68,7 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
   const existingUser = await Prisma.user.findUnique({
     where:{clerkUserId:userId}
   })
-  if(!existingUser){
+  if(!existingUser || existingArticle.authorId !== existingUser.id){
     return {
       errors:{
         formErrors:["User not found  register before creating an article"]
