@@ -78,7 +78,8 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
   // start creating articles
 
   const imageFile = formData.get('featuredImage') as File | null;
- 
+ if(imageFile && imageFile.name !== "undefined") {
+  
   }
 
   const arrayBuffer = await imageFile.arrayBuffer();
