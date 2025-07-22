@@ -92,6 +92,8 @@ try {
         }else{
           resolve(result)
         }
+      }
+    );
         uploadStream.end(buffer);
       }
     );
