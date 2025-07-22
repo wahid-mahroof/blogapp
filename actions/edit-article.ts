@@ -92,6 +92,7 @@ try {
         }else{
           resolve(result)
         }
+        uploadStream.end(buffer);
       }
     );
 } catch (error) {
@@ -100,7 +101,7 @@ try {
   }
 
  
-    uploadStream.end(buffer);
+    
   })
 
   let imageUrl = existingArticle.featuredImage;
