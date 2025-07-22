@@ -80,7 +80,20 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
   const imageFile = formData.get('featuredImage') as File | null;
  if(imageFile && imageFile.name !== "undefined") {
 try {
-  
+  const arrayBuffer = await imageFile.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+
+  const uploadResponse :  UploadApiResponse | undefined = await new Promise((resolve,rejects) => {
+    const uploadStream = cloundinary.uploader.upload_stream(
+      {resource_type:"auto"},
+      (error,result) => {
+        if(error){
+          rejects(error)
+        }else{
+          resolve(result)
+        }
+      }
+    );
 } catch (error) {
   
 }
