@@ -95,6 +95,9 @@ try {
         uploadStream.end(buffer);
       }
     );
+    if(uploadResponse?.secure_url){
+      imageUrl = uploadResponse.secure_url
+    }
 } catch (error) {
   
 }
@@ -102,13 +105,11 @@ try {
 
  
     
-  })
+  
 
   let imageUrl = existingArticle.featuredImage;
 
-  if(uploadResponse?.secure_url){
-    imageUrl = uploadResponse.secure_url
-  }
+ 
 
   if(!imageUrl) {
     return {
