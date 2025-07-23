@@ -99,6 +99,8 @@ try {
     );
     if(uploadResponse?.secure_url){
       imageUrl = uploadResponse.secure_url
+    }else{
+      
     }
 } catch (error) {
   
