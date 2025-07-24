@@ -75,7 +75,7 @@ export const editArticle = async (articleId:string,prevState:createArticlesForms
       }
     }
   }
-  // start creating articles
+  // start editing articles
   let imageUrl = existingArticle.featuredImage;
 
   const imageFile = formData.get('featuredImage') as File | null;
@@ -101,7 +101,9 @@ try {
     if(uploadResponse?.secure_url){
       imageUrl = uploadResponse.secure_url
     }else{
-
+return {
+  
+}
     }
 } catch (error) {
   
