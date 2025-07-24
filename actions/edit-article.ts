@@ -120,13 +120,7 @@ return {
 
  
 
-  if(!imageUrl) {
-    return {
-      error:{
-        featuredImage:["failled to upload image,please try again"]
-      }
-    }
-  }
+  
   try {
     await Prisma.articles.update({
       where:{id:articleId},
