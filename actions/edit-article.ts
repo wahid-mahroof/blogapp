@@ -102,7 +102,9 @@ try {
       imageUrl = uploadResponse.secure_url
     }else{
 return {
-  
+  error: {
+    featuredImage:['failed to upload image,please try again']
+  }
 }
     }
 } catch (error) {
