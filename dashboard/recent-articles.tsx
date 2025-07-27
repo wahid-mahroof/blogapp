@@ -106,6 +106,7 @@ function RecentArticles : React.FC<RecentArticlesProps> = ({articles}) {
 export default RecentArticles;
 
 const DeleteButton = () => {
+  const {pending} = useFormStatus();
   return (
     <form>
       <Button variant={"ghost"} size={"sm"} type="submit">
