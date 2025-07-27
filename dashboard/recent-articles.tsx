@@ -110,7 +110,7 @@ const DeleteButton = () => {
   return (
     <form>
       <Button disabled={pending} variant={"ghost"} size={"sm"} type="submit">
-        Delete
+        {pending ? "loading..." : "Delete"}
       </Button>
     </form>
   );
