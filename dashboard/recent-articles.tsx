@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/table";
 import { Badge, Link } from "lucide-react";
 import { Prisma } from "@prisma/client";
+import { useFormStatus } from "react-dom";
 
 type RecentArticlesProps = {
   articles:Prisma.ArticlesGetPayload>{
