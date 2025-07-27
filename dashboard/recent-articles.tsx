@@ -84,10 +84,12 @@ function RecentArticles : React.FC<RecentArticlesProps> = ({articles}) {
        <TableCell>{article.createdAt.toDateString}</TableCell>
        <TableCell>
          <div className="flex gap-2">
-           <Link href="/dashboard/articles/${article.id}/edit" />
+           <Link href="/dashboard/articles/${article.id}/edit" >
            <Button variant={"ghost"} size={"sm"}>
              Edit
            </Button>
+           </Link>
+           <DeleteButton articleId = {article.id}/>
          </div>
        </TableCell>
      </TableRow>
