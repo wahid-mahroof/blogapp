@@ -108,7 +108,11 @@ return {
 }
     }
 } catch (error) {
-  
+  return {
+    errors: {
+      featuredImage:['failed to upload image,please try again']
+    }
+  }
 }
   }
 
@@ -123,7 +127,7 @@ return {
   
   try {
     await Prisma.articles.update({
-      where:{id:articleId},
+      where: {id: articleId},
       data:{
         title:result.data.title,
         category:result.data.content,
