@@ -109,7 +109,7 @@ const DeleteButton = () => {
   const {pending} = useFormStatus();
   return (
     <form>
-      <Button variant={"ghost"} size={"sm"} type="submit">
+      <Button disabled={pending} variant={"ghost"} size={"sm"} type="submit">
         Delete
       </Button>
     </form>
