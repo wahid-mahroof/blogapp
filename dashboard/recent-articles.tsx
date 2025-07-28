@@ -108,7 +108,11 @@ function RecentArticles : React.FC<RecentArticlesProps> = ({articles}) {
 
 export default RecentArticles;
 
-const DeleteButton = () => {
+type DeleteButtonProps = {
+  articleId : String
+}
+
+const DeleteButton : React.FC<DeleteButtonProps> = ({articleId}) => {
   const {pending} = useFormStatus();
   return (
     <form>
