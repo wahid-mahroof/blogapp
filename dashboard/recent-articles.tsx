@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { startTransition } from "react";
 import {
   Card,
   CardContent,
@@ -116,7 +116,11 @@ type DeleteButtonProps = {
 const DeleteButton : React.FC<DeleteButtonProps> = ({articleId}) => {
   const {pending} = useFormStatus();
   return (
-    <form>
+    <form action={
+      () => {
+        startTransition
+      }
+    }>
       <Button disabled={pending} variant={"ghost"} size={"sm"} type="submit">
         {pending ? "loading..." : "Delete"}
       </Button>
