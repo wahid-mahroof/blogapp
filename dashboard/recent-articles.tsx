@@ -1,5 +1,5 @@
 "use client"
-import React, { startTransition } from "react";
+import React, { startTransition, useTransition } from "react";
 import {
   Card,
   CardContent,
@@ -115,7 +115,7 @@ type DeleteButtonProps = {
 }
 
 const DeleteButton : React.FC<DeleteButtonProps> = ({articleId}) => {
-  const {pending} = useFormStatus();
+  const [isPending,startTransition] = useTransition();
   return (
     <form action={
       () => {
