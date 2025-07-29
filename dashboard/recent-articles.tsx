@@ -19,6 +19,7 @@ import {
 import { Badge, Link } from "lucide-react";
 import { Prisma } from "@prisma/client";
 import { useFormStatus } from "react-dom";
+import { deleteArticle } from "@/actions/delete-article";
 
 type RecentArticlesProps = {
   articles:Prisma.ArticlesGetPayload>{
@@ -118,7 +119,9 @@ const DeleteButton : React.FC<DeleteButtonProps> = ({articleId}) => {
   return (
     <form action={
       () => {
-        startTransition
+        startTransition(async() => {
+          await deleteArticle(articleId);
+        })
       }
     }>
       <Button disabled={pending} variant={"ghost"} size={"sm"} type="submit">
