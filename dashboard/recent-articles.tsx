@@ -124,8 +124,8 @@ const DeleteButton : React.FC<DeleteButtonProps> = ({articleId}) => {
         })
       }
     }>
-      <Button disabled={pending} variant={"ghost"} size={"sm"} type="submit">
-        {pending ? "loading..." : "Delete"}
+      <Button disabled={isPending} variant={"ghost"} size={"sm"} type="submit">
+        {isPending ? "loading..." : "Delete"}
       </Button>
     </form>
   );
