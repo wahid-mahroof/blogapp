@@ -1,7 +1,7 @@
 import React from "react";
 
-function loading() {
-  return <div>loading</div>;
-}
+const DashboardLoadingScreen = () => {
+  return;
+};
 
-export default loading;
+export default DashboardLoadingScreen;
