@@ -10,6 +10,7 @@ const DashboardLoadingScreen = () => {
           <h1 className="text-2xl font-se,ibold text-gray-800 dark:text-gray-200">
             loading dashboard...
           </h1>
+          <p className="">please wait while we prepare your dashboard.</p>
         </div>
       </div>
     </div>
