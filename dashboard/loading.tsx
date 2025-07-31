@@ -7,6 +7,9 @@ const DashboardLoadingScreen = () => {
         {/* spinner*/}
         <div className="animate-spin rounded-full h-16 w-16 border-t--4 border-b-4 border-purple-500 dark:border-2">
           {/* loadinng text*/}
+          <h1 className="text-2xl font-se,ibold text-gray-800 dark:text-gray-200">
+            loading dashboard...
+          </h1>
         </div>
       </div>
     </div>
