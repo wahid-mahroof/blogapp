@@ -5,8 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { Prisma } from "@/lib/prisma";
 
-const TopArticles = () => {
+const TopArticles = async () => {
+  const article = await Prisma.articles.findMany({});
   return (
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <Card className="group relative overflow-hidden transition-all hover:scale-[1.02] border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900 backdrop-blur-lg">
