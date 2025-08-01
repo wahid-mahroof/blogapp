@@ -12,6 +12,9 @@ const TopArticles = async () => {
     orderBy: {
       createdAt: "desc",
     },
+    include: {
+      comments: true,
+    },
   });
   return (
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
