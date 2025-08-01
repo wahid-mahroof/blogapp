@@ -14,6 +14,13 @@ const TopArticles = async () => {
     },
     include: {
       comments: true,
+      author: {
+        select: {
+          name: true,
+          email: true,
+          imageUrl: true,
+        },
+      },
     },
   });
   return (
