@@ -34,7 +34,7 @@ const TopArticles = async () => {
             <Link href="/articles/1">
               <div className="relative h-48 w-full overflow-hidden rounded-xl">
                 <Image
-                  src="https://img.freepik.com/free-photo/side-view-female-asian-woman-sitting-cafe-working-laptop_1098-17167.jpg"
+                  src={}
                   alt="article"
                   fill
                   className="object-cover"
