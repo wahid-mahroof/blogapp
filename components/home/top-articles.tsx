@@ -34,7 +34,7 @@ const TopArticles = async () => {
             <Link href="/articles/1">
               <div className="relative h-48 w-full overflow-hidden rounded-xl">
                 <Image
-                  src={}
+                  src={article.featuredImage}
                   alt="article"
                   fill
                   className="object-cover"
