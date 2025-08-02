@@ -45,7 +45,7 @@ const TopArticles = async () => {
 
             <div className="flex items-center gap-x-3 mt-4 text-sm text-muted-foreground">
               <Avatar>
-                <AvatarImage src={article.author.imageUrl} />
+                <AvatarImage src={article.author.imageUrl as string} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <span> wahid Mahroof</span>
