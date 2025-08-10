@@ -48,7 +48,7 @@ const TopArticles = async () => {
                 <AvatarImage src={article.author.imageUrl as string} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <span> wahid Mahroof</span>
+              <span> {article.author.name}</span>
             </div>
 
             <h3 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
