@@ -19,9 +19,10 @@ export default function Home() {
             </h2>
             <p>Discover our most popular and trending content</p>
           </div>
-          <Suspense></Suspense>
+          <Suspense>
+            <TopArticles />
+          </Suspense>
 
-          <TopArticles />
           <div className="text-center mt-12">
             <Link href={"/articles"}>
               <Button className="rounded-full hover:bg-gray-900 dark:bg-white dark:hover:text-gray-900 ">
