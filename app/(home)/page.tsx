@@ -19,7 +19,7 @@ export default function Home() {
             </h2>
             <p>Discover our most popular and trending content</p>
           </div>
-          <Suspense>
+          <Suspense fallback={<h1>Loading...</h1>}>
             <TopArticles />
           </Suspense>
 
