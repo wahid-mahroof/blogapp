@@ -4,6 +4,7 @@ import HeroSection from "@/components/home/hero-section";
 import TopArticles from "@/components/home/top-articles";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
             </h2>
             <p>Discover our most popular and trending content</p>
           </div>
+          <Suspense></Suspense>
 
           <TopArticles />
           <div className="text-center mt-12">
